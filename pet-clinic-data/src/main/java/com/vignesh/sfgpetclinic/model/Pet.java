@@ -7,6 +7,7 @@ public class Pet  {
 private PetType petType;
 
     public PetType getPetType() {
+
         return petType;
     }
 
