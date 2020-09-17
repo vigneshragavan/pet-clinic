@@ -1,7 +1,8 @@
 package com.vignesh.sfgpetclinic.model;
 
-public enum PetType {
-    ;
+public class PetType extends  BaseEntity
+{
+
 
     public String getName() {
         return name;
