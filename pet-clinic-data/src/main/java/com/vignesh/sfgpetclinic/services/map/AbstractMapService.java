@@ -2,12 +2,15 @@ package com.vignesh.sfgpetclinic.services.map;
 
 
 import com.vignesh.sfgpetclinic.model.BaseEntity;
+import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+
+@Service
 public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> {
 
         protected Map<Long, T> map = new HashMap<>();

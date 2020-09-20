@@ -4,19 +4,19 @@ import com.vignesh.sfgpetclinic.model.Owner;
 import com.vignesh.sfgpetclinic.model.Vet;
 import com.vignesh.sfgpetclinic.services.OwnerService;
 import com.vignesh.sfgpetclinic.services.VetService;
-import com.vignesh.sfgpetclinic.services.map.OwnerServiceMap;
-import com.vignesh.sfgpetclinic.services.map.VetServiceMap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
 public class DataLoader  implements CommandLineRunner {
+
     private final OwnerService ownerService;
     private  final VetService vetService;
-    public DataLoader()
+    public DataLoader(OwnerService ownerService, VetService vetService)
     {
-   ownerService=new OwnerServiceMap();
-   vetService=new VetServiceMap();
+        this.ownerService = ownerService;
+
+        this.vetService = vetService;
     }
     @Override
 
