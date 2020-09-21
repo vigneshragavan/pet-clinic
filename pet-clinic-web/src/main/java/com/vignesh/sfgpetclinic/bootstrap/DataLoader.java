@@ -1,8 +1,10 @@
 package com.vignesh.sfgpetclinic.bootstrap;
 
 import com.vignesh.sfgpetclinic.model.Owner;
+import com.vignesh.sfgpetclinic.model.PetType;
 import com.vignesh.sfgpetclinic.model.Vet;
 import com.vignesh.sfgpetclinic.services.OwnerService;
+import com.vignesh.sfgpetclinic.services.PetTypeService;
 import com.vignesh.sfgpetclinic.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -12,12 +14,14 @@ public class DataLoader  implements CommandLineRunner {
 
     private final OwnerService ownerService;
     private  final VetService vetService;
+    private final PetTypeService petTypeService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService)
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService)
     {
         this.ownerService = ownerService;
 
         this.vetService = vetService;
+        this.petTypeService = petTypeService;
     }
     @Override
 
@@ -44,7 +48,11 @@ public class DataLoader  implements CommandLineRunner {
 
         System.out.println("loaded vet1");
 
-
-
+        PetType dog=new PetType();
+        dog.setName("Dog");
+        PetType saveDogPetType=petTypeService.save(dog);
+        PetType cat=new PetType();
+        cat.setName("cat");
+        PetType saveCatPetType=petTypeService.save(cat);
     }
 }
