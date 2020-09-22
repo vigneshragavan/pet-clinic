@@ -1,13 +1,13 @@
 package com.vignesh.sfgpetclinic.services.map;
 
 import com.vignesh.sfgpetclinic.model.Speciality;
-import com.vignesh.sfgpetclinic.services.SpecialitesService;
+import com.vignesh.sfgpetclinic.services.SpecialityService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
-public class SpecialitiesMapService extends  AbstractMapService<Speciality,Long> implements SpecialitesService {
+public class SpecialitiesMapService extends  AbstractMapService<Speciality,Long> implements SpecialityService {
     @Override
     public Set<Speciality> findAll() {
         return super.findAll();
